@@ -19,7 +19,7 @@ class Section {
     void checkConflict(Section other) {
         if (this.schedule.equals(other.schedule)) {
             throw new ScheduleConflictException(
-                    "This section " + this + " and other section " + other + " hav same schedule at " + schedule);
+                    "This section " + this + " and other section " + other + " have same schedule at " + schedule);
         }
     }
 

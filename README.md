@@ -1,6 +1,6 @@
-## UNiversity Enlistment With Unit Testing
+# UNiversity Enlistment With Unit Testing
 
-### Description
+## Description
 
 A requirement for a course in CIIT College of Arts and Technology called Software Engeneering 1.
 
@@ -19,8 +19,8 @@ A requirement for a course in CIIT College of Arts and Technology called Softwar
 - Periods may be of any duration of 30-min increments,w/in the hours of 8:30am -5:30pm.
 - Periods may begin and may end at the top of each hour(9:00, 10:00, 11:00...) or atthe bottom of each hour (9:30, 10:30, 11:30...).
 - End of a period may not be on or before the startof the period.
-- Examples
-- Valid Periods: 8:30am - 10:00am, 9:00am - 12:00nn,2:30pm - 4:30pm, 9:00am -10:30am...
+  - Examples
+  - Valid Periods: 8:30am - 10:00am, 9:00am - 12:00nn,2:30pm - 4:30pm, 9:00am -10:30am...
 - Invalid Periods: 8:45am - 10:15am, 12:01pm - 12:02pm,4:00pm - 3:00pm, 4:30pm -6:00pm
 - A section has a room.
 - A room is identified by its room name, which is alphanumeric.
@@ -43,3 +43,6 @@ A requirement for a course in CIIT College of Arts and Technology called Softwar
 ### Group Members
 
 - [Nadji Tan](https://github.com/Kapatid)
+- [Jeremy Habal](https://github.com/J-Habal)
+- [Gabriel Verceles](https://github.com/Koruuin)
+- [Jerwin Fabelico](https://github.com/Omni-ssiah)
