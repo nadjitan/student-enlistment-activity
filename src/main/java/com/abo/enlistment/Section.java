@@ -5,7 +5,7 @@ import static org.apache.commons.lang3.StringUtils.*;
 
 class Section {
     private final String sectionId;
-    private final Schedule schedule;
+    private final Schedule schedule;    
 
     Section(String sectionId, Schedule schedule) {
         notBlank(sectionId);

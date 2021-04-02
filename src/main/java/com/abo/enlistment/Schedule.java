@@ -23,7 +23,7 @@ class Schedule {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((days == null) ? 0 : days.hashCode());
-        result = prime * result + ((days == null) ? 0 : period.hashCode());
+        result = prime * result + ((period == null) ? 0 : period.hashCode());
         return result;
     }
 
