@@ -46,5 +46,3 @@ A requirement for a course in CIIT College of Arts and Technology called Softwar
 - [Jeremy Habal](https://github.com/J-Habal)
 - [Gabriel Verceles](https://github.com/Koruuin)
 - [Jerwin Fabelico](https://github.com/Omni-ssiah)
-
-lol
