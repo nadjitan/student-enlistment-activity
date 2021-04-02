@@ -42,7 +42,7 @@ A requirement for a course in CIIT College of Arts and Technology called Softwar
 
 ### Group Members
 
-- [Nadji Tan](https://github.com/Kapatid)
+- [Nadji Tan](https://github.com/Kapatid) (Kapatid)
 - [Jeremy Habal](https://github.com/J-Habal)
 - [Gabriel Verceles](https://github.com/Koruuin)
 - [Jerwin Fabelico](https://github.com/Omni-ssiah)
