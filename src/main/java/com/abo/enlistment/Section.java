@@ -6,14 +6,17 @@ import static org.apache.commons.lang3.StringUtils.*;
 class Section {
     private final String sectionId;
     private final Schedule schedule;    
+    private final Room room;    
 
-    Section(String sectionId, Schedule schedule) {
+    Section(String sectionId, Schedule schedule, Room room) {
         notBlank(sectionId);
         notNull(schedule);
+        notNull(room);
         isTrue(isAlphanumeric(sectionId), "sectionId must be alphanumeric, was: " + sectionId);
 
         this.sectionId = sectionId;
         this.schedule = schedule;
+        this.room = room;
     }
 
     void checkConflict(Section other) {

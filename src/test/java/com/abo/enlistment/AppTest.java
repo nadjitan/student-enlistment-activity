@@ -20,8 +20,8 @@ public class AppTest {
     public void enlist_2_sections_no_sched_overlaps() {
         // Given one student and 2 sections no overlapping schedules
         Student student = new Student(1);
-        Section sec1 = new Section("A", new Schedule(Days.MTH, Period.H0830));
-        Section sec2 = new Section("B", new Schedule(Days.TF, Period.H1000));
+        Section sec1 = new Section("A", new Schedule(Days.MTH, Period.H0830), new Room("Room1", 30));
+        Section sec2 = new Section("B", new Schedule(Days.TF, Period.H1000), new Room("Room2", 30));
 
         // When the student enlists in both sections
         student.enlist(sec1);
@@ -36,8 +36,8 @@ public class AppTest {
     public void enlist_2_sections_same_schedule() {
         // Given one student and 2 sections w/ same schedule
         Student student = new Student(1, Collections.emptyList());
-        Section sec1 = new Section("A", new Schedule(Days.MTH, Period.H0830));
-        Section sec2 = new Section("B", new Schedule(Days.MTH, Period.H0830));
+        Section sec1 = new Section("A", new Schedule(Days.MTH, Period.H0830), new Room("Room1", 30));
+        Section sec2 = new Section("B", new Schedule(Days.MTH, Period.H0830), new Room("Room2", 30));
 
         // When the student enlists in both sections
         student.enlist(sec1);
