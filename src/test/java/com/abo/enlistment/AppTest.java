@@ -45,4 +45,21 @@ public class AppTest {
         // Then an exception should be thrown in the second enlistment
         assertThrows(ScheduleConflictException.class, () -> student.enlist(sec2));
     }
+
+    @Test
+    public void enlist_capacity_exceed() {
+        // Given 2 student and 1 section the section only has 1 capacity
+        Student student = new Student(1, Collections.emptyList());
+        Student student2 = new Student(2, Collections.emptyList());
+        Section sec1 = new Section("A", new Schedule(Days.MTH, Period.H0830), new Room("Room1", 1));
+        
+
+        // When 2 student join 1 section but the section only has 1 capacity
+        student.enlist(sec1);
+        student2.enlist(sec1);
+
+        // Then throw and exception if the capacity exceeds
+        
+    }
+
 }

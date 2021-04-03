@@ -26,6 +26,10 @@ class Section {
         }
     }
 
+    void comfirmStudentInRoom(){
+        room.addStudentToRoom();
+    }
+
     @Override
     public String toString() {
         return sectionId;
