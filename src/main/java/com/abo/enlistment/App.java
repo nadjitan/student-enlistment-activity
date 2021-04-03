@@ -4,8 +4,10 @@ package com.abo.enlistment;
  * Hello world!
  *
  */
-public class App {
-    public static void main(String[] args) {
-        System.out.println("App running...");
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "App running..." );
     }
 }
