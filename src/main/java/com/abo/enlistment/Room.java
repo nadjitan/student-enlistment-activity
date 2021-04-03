@@ -2,15 +2,27 @@ package com.abo.enlistment;
 
 import static org.apache.commons.lang3.Validate.*;
 
+
 class Room {
     private final String roomName;
     private final int capacity;
+    private int numberOfStudents = 0;
+
 
     Room(String roomName, int capacity) {
         notBlank(roomName);
         notNull(capacity);
         this.roomName = roomName;
         this.capacity = capacity;
+    }
+    
+    public void addStudentToRoom(){
+        if(numberOfStudents < capacity){    
+            numberOfStudents++;
+        }
+        else{   
+            throw new IllegalArgumentException("Cannot enlist currently: " + capacity);
+        }
     }
 
     @Override
@@ -42,4 +54,7 @@ class Room {
             return false;
         return true;
     }
+
+
+
 }

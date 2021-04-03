@@ -31,6 +31,7 @@ class Student {
         }
 
         sections.forEach(currSection -> currSection.checkConflict(newSection));
+        newSection.comfirmStudentInRoom();
         sections.add(newSection);
     }
 
