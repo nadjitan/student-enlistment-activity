@@ -41,6 +41,19 @@ class Schedule {
             || parsedEndPeriod.getMinute() == 30 || parsedEndPeriod.getMinute() == 00))
             throw new ScheduleConflictException(
                     "This period " + startPeriod + "-" + endPeriod + " should be at the top or bottom of each hour");
+
+        // start period should not be equal to the end period
+        if (parsedStartPeriod == parsedEndPeriod) 
+            throw new ScheduleConflictException(
+                "This period " + startPeriod + "-" + endPeriod + " should not have the same time");
+
+
+        // end period time should not be set before start period time
+        int time = parsedStartPeriod.compareTo(parsedEndPeriod);
+        if (time > 0)
+            throw new ScheduleConflictException(
+                "This period " + startPeriod + "-" + endPeriod + "end period time should not be set before start period time" );
+
     }
 
     @Override
