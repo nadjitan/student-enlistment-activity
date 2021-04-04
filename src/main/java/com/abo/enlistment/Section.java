@@ -1,6 +1,7 @@
 package com.abo.enlistment;
 
 import static org.apache.commons.lang3.Validate.*;
+
 import static org.apache.commons.lang3.StringUtils.*;
 
 class Section {
@@ -27,16 +28,24 @@ class Section {
     }
 
     void confirmPeriod() {
-        schedule.checkPeriodConstraints();
+        this.schedule.checkPeriodConstraints();
     }
 
     void comfirmStudentInRoom() {
-        room.addStudentToRoom();
+        this.room.addStudentToRoom();
+    }
+
+    Schedule getSchedule() {
+        return this.schedule;
+    }
+
+    Room getRoom() {
+        return this.room;
     }
 
     @Override
     public String toString() {
-        return sectionId;
+        return this.sectionId;
     }
 
     @Override
@@ -60,5 +69,4 @@ class Section {
             return false;
         return true;
     }
-
 }

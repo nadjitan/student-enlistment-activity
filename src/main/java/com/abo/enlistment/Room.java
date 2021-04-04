@@ -14,9 +14,17 @@ class Room {
         this.capacity = capacity;
     }
 
+    public String getRoomName() {
+        return this.roomName;
+    }
+
+    public int getCapacity() {
+        return this.capacity;
+    }
+
     void addStudentToRoom() {
-        if (numberOfStudents < capacity) {
-            numberOfStudents++;
+        if (this.numberOfStudents < this.capacity) {
+            this.numberOfStudents++;
         } else {
             throw new IllegalArgumentException("Max capacity of room reached. Student cannot be added.");
         }
@@ -24,7 +32,7 @@ class Room {
 
     @Override
     public String toString() {
-        return roomName;
+        return this.roomName;
     }
 
     @Override

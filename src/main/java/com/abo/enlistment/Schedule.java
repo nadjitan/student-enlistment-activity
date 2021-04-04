@@ -1,14 +1,17 @@
 package com.abo.enlistment;
 
 import static java.time.temporal.ChronoUnit.MINUTES;
+
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+
 import static org.apache.commons.lang3.Validate.*;
 
 class Schedule {
-    private final Days days;
+    private final String[] days = { "MTH", "TF", "WS" };
     private final String minPeriod = "0830"; // 08:30 AM
     private final String maxPeriod = "1700"; // 05:00 PM
+    private final String day;
     private final String startPeriod;
     private final String endPeriod;
     private final int increment = 30;
@@ -16,20 +19,29 @@ class Schedule {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HHmm");
     DateTimeFormatter debugFormat = DateTimeFormatter.ofPattern("HHmm");
 
-    Schedule(Days days, String startPeriod, String endPeriod) {
-        notNull(days);
+    Schedule(String day, String startPeriod, String endPeriod) {
+        notNull(day);
         notBlank(startPeriod);
         notBlank(endPeriod);
-        this.days = days;
+        this.day = day;
         this.startPeriod = startPeriod;
         this.endPeriod = endPeriod;
     }
 
+    public String getDay() {
+        return this.day;
+    }
+
+
+    public String getPeriod() {
+        return LocalTime.parse(this.startPeriod, formatter) + " - " + LocalTime.parse(this.endPeriod, formatter);
+    }
+
     void checkPeriodConstraints() {
-        LocalTime parsedStartPeriod = LocalTime.parse(startPeriod, formatter);
-        LocalTime parsedEndPeriod = LocalTime.parse(endPeriod, formatter);
-        LocalTime parsedMinPeriod = LocalTime.parse(minPeriod, formatter);
-        LocalTime parsedMaxPeriod = LocalTime.parse(maxPeriod, formatter);
+        LocalTime parsedStartPeriod = LocalTime.parse(this.startPeriod, formatter);
+        LocalTime parsedEndPeriod = LocalTime.parse(this.endPeriod, formatter);
+        LocalTime parsedMinPeriod = LocalTime.parse(this.minPeriod, formatter);
+        LocalTime parsedMaxPeriod = LocalTime.parse(this.maxPeriod, formatter);
 
         // checks if duration is of 30-min increments
         if (!((MINUTES.between(parsedStartPeriod, parsedEndPeriod) % increment) == 0))
@@ -47,7 +59,8 @@ class Schedule {
             throw new ScheduleConflictException("This period " + parsedStartPeriod + " - " + parsedEndPeriod
                     + " should be at the top or bottom of each hour");
 
-        // start period should not be equal to the end period or end period should not be set before start period
+        // start period should not be equal to the end period or end period should not
+        // be set before start period
         if (parsedStartPeriod.compareTo(parsedEndPeriod) >= 0)
             throw new ScheduleConflictException("This period " + parsedStartPeriod + " - " + parsedEndPeriod
                     + " should not have the same start and end or end period time should not be set before start period time");
@@ -56,7 +69,8 @@ class Schedule {
 
     @Override
     public String toString() {
-        return days + " " + LocalTime.parse(startPeriod, debugFormat) + " - " + LocalTime.parse(endPeriod, debugFormat);
+        return this.days + " " + LocalTime.parse(this.startPeriod, this.debugFormat) + " - "
+                + LocalTime.parse(this.endPeriod, this.debugFormat);
     }
 
     @Override
