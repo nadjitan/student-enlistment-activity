@@ -7,13 +7,21 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-/**
- * App
- *
- */
 public class App {
+    public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+        int userInput = 1;
 
+        while (userInput != 0)
+        {
+            Enlistment();
+
+            out.print("Would you like to enlist in another Section? 0 = No, 1 = Yes: ");
+            userInput = scanner.nextInt();
+        }
+    }
+
+    public static void Enlistment() {
         Section section1 = new Section("A", new Schedule("MTH", "0830", "1300"), new Room("Room1", 5));
         Section section2 = new Section("B", new Schedule("TF", "1000", "1430"), new Room("Room2", 5));
         Section section3 = new Section("C", new Schedule("WS", "1300", "1700"), new Room("Room3", 5));
@@ -33,11 +41,11 @@ public class App {
         out.println("(3) Section 3: " + section3.getSchedule().getDay() + " " + section3.getSchedule().getPeriod() + " "
                 + section3.getRoom());
 
-        try (Scanner scan = new Scanner(System.in)) {
+        try {
             Student student = new Student(1);
 
             out.println("Select a section (enter the corresponding number of section): ");
-            int sectionNum = scan.nextInt();
+            int sectionNum = scanner.nextInt();
 
             if (sections.containsKey(sectionNum)) {
                 student.enlist(sections.get(sectionNum));
@@ -51,5 +59,6 @@ public class App {
         } catch (NoSuchElementException e) {
             out.println("Please pick an existing section");
         }
+        
     }
 }
