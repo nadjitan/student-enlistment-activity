@@ -1,6 +1,5 @@
 package com.abo.enlistment;
 
-import java.util.Collections;
 import java.util.Collection;
 import java.util.List;
 
