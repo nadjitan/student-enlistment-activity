@@ -25,7 +25,7 @@ class Student {
         this.sections.addAll(sections);
     }
 
-    boolean enlist(Section newSection) {
+    void enlist(Section newSection) {
         if (newSection == null) {
             throw new NullPointerException("section was null");
         }
@@ -34,8 +34,6 @@ class Student {
         newSection.confirmPeriod();
         newSection.comfirmStudentInRoom();
         sections.add(newSection);
-
-        return true;
     }
 
     Collection<Section> getSections() {

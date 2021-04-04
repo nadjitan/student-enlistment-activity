@@ -2,12 +2,10 @@ package com.abo.enlistment;
 
 import static org.apache.commons.lang3.Validate.*;
 
-
 class Room {
     private final String roomName;
     private final int capacity;
     private int numberOfStudents = 0;
-
 
     Room(String roomName, int capacity) {
         notBlank(roomName);
@@ -15,12 +13,11 @@ class Room {
         this.roomName = roomName;
         this.capacity = capacity;
     }
-    
-    void addStudentToRoom(){
-        if(numberOfStudents < capacity){    
+
+    void addStudentToRoom() {
+        if (numberOfStudents < capacity) {
             numberOfStudents++;
-        }
-        else{   
+        } else {
             throw new IllegalArgumentException("Max capacity of room reached. Student cannot be added.");
         }
     }
@@ -54,7 +51,4 @@ class Room {
             return false;
         return true;
     }
-
-
-
 }
