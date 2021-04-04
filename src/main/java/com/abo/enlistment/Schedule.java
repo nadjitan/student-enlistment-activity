@@ -47,15 +47,10 @@ class Schedule {
             throw new ScheduleConflictException("This period " + parsedStartPeriod + " - " + parsedEndPeriod
                     + " should be at the top or bottom of each hour");
 
-        // start period should not be equal to the end period
-        if (parsedStartPeriod.compareTo(parsedEndPeriod) == 0)
-            throw new ScheduleConflictException(
-                    "This period " + parsedStartPeriod + " - " + parsedEndPeriod + " should not have the same time");
-
-        // end period time should not be set before start period time
-        if (parsedStartPeriod.compareTo(parsedEndPeriod) > 0)
+        // start period should not be equal to the end period or end period should not be set before start period
+        if (parsedStartPeriod.compareTo(parsedEndPeriod) >= 0)
             throw new ScheduleConflictException("This period " + parsedStartPeriod + " - " + parsedEndPeriod
-                    + " end period time should not be set before start period time");
+                    + " should not have the same start and end or end period time should not be set before start period time");
 
     }
 
