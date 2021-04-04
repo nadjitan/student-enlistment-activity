@@ -32,7 +32,7 @@ class Student {
 
         sections.forEach(currSection -> currSection.checkScheduleConflict(newSection));
         newSection.confirmPeriod();
-        newSection.comfirmStudentInRoom();
+        newSection.confirmStudentInRoom();
         sections.add(newSection);
     }
 

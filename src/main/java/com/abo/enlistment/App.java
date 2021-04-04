@@ -9,14 +9,14 @@ import java.util.Scanner;
 
 public class App {
     public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         int userInput = 1;
 
-        while (userInput != 0)
-        {
+        while (userInput != 0) {
             Enlistment();
 
-            out.print("Would you like to enlist in another Section? 0 = No, 1 = Yes: ");
+            out.print("Would you like to enlist in another Section? 1 = No, 2 = Yes: ");
             userInput = scanner.nextInt();
         }
     }
@@ -25,7 +25,6 @@ public class App {
         Section section1 = new Section("A", new Schedule("MTH", "0830", "1300"), new Room("Room1", 5));
         Section section2 = new Section("B", new Schedule("TF", "1000", "1430"), new Room("Room2", 5));
         Section section3 = new Section("C", new Schedule("WS", "1300", "1700"), new Room("Room3", 5));
-        Section section4 = new Section("C", new Schedule("WS", "1300", "1700"), new Room("Room3", 5));
 
         HashMap<Integer, Section> sections = new HashMap<Integer, Section>();
 
@@ -59,6 +58,6 @@ public class App {
         } catch (NoSuchElementException e) {
             out.println("Please pick an existing section");
         }
-        
+
     }
 }

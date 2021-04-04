@@ -101,7 +101,3 @@ class Schedule {
         return true;
     }
 }
-
-enum Days {
-    MTH, TF, WS
-}

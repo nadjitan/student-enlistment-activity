@@ -31,7 +31,7 @@ class Section {
         this.schedule.checkPeriodConstraints();
     }
 
-    void comfirmStudentInRoom() {
+    void confirmStudentInRoom() {
         this.room.addStudentToRoom();
     }
 
