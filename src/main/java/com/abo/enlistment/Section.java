@@ -5,8 +5,8 @@ import static org.apache.commons.lang3.StringUtils.*;
 
 class Section {
     private final String sectionId;
-    private final Schedule schedule;    
-    private final Room room;    
+    private final Schedule schedule;
+    private final Room room;
 
     Section(String sectionId, Schedule schedule, Room room) {
         notBlank(sectionId);
@@ -19,14 +19,18 @@ class Section {
         this.room = room;
     }
 
-    void checkConflict(Section other) {
+    void checkScheduleConflict(Section other) {
         if (this.schedule.equals(other.schedule)) {
             throw new ScheduleConflictException(
                     "This section " + this + " and other section " + other + " have same schedule at " + schedule);
         }
     }
 
-    void comfirmStudentInRoom(){
+    void confirmPeriod() {
+        schedule.checkPeriodConstraints();
+    }
+
+    void comfirmStudentInRoom() {
         room.addStudentToRoom();
     }
 

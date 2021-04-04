@@ -16,12 +16,12 @@ class Room {
         this.capacity = capacity;
     }
     
-    public void addStudentToRoom(){
+    void addStudentToRoom(){
         if(numberOfStudents < capacity){    
             numberOfStudents++;
         }
         else{   
-            throw new IllegalArgumentException("Cannot enlist currently: " + capacity);
+            throw new IllegalArgumentException("Max capacity of room reached. Student cannot be added.");
         }
     }
 
