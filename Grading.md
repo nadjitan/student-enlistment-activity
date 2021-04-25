@@ -30,7 +30,7 @@ Negative
 * Time should not have been represented with String since parsing is error prone.
 
 
-## Version Control & Continuous Integration Practices: 8/10%
+## Version Control & Continuous Integration Practices: 7/10%
 
 Negative 
 
