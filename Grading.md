@@ -44,7 +44,7 @@ Positive
 
 ## OVERALL SCORE ##
 
-**From submitted work:** 77/100
+**From submitted work:** 76/100
 
 **Bonuses:**
 
@@ -52,4 +52,4 @@ Positive
 * Code actually compiles and runs: 10 pts
 
 ### TOTAL SCORE ###
-**97/100**
+**96/100**
